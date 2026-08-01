@@ -1,61 +1,217 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Tickets | FIFA World Cup 26™</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        body { background-color: #0b0e14; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
-        header { background-color: #000; border-bottom: 2px solid #3262ec; padding: 0 40px; }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff; }
-        .logo-badge { background: linear-gradient(135deg, #3262ec, #00d2ff); padding: 8px 14px; border-radius: 6px; font-weight: 900; }
-        nav ul { display: flex; list-style: none; gap: 28px; }
-        nav a { text-decoration: none; color: #e1e1e1; font-weight: 600; font-size: 14px; text-transform: uppercase; }
-        nav a.active { color: #00d2ff; }
-
-        .container { max-width: 700px; margin: 50px auto; padding: 0 20px; flex: 1; }
-        .ticket-form { background: #161c28; border: 1px solid #222c3d; border-radius: 16px; padding: 40px; }
-        .form-group { margin-bottom: 20px; }
-        .form-group label { display: block; font-size: 12px; font-weight: 700; color: #00d2ff; margin-bottom: 8px; text-transform: uppercase; }
-        .form-group input { width: 100%; background: #0b0e14; border: 1px solid #222c3d; padding: 12px; border-radius: 8px; color: #fff; outline: none; }
-        .btn-submit { width: 100%; background: #3262ec; color: #fff; border: none; padding: 14px; border-radius: 30px; font-weight: 800; cursor: pointer; text-transform: uppercase; }
-        footer { background: #000; border-top: 1px solid #222c3d; padding: 30px 0; text-align: center; color: #64748b; font-size: 13px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chiptalar va VIP Paketlar | FIFA World Cup 2026™</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fifaGold: '#D4AF37',
+                        fifaBlue: '#021B38',
+                        fifaGreen: '#00E676',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="brand"><span class="logo-badge">FWC 26</span><strong>FIFA World Cup 26™</strong></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="matches.html">Matches</a></li>
-                    <li><a href="teams.html">Teams</a></li>
-                    <li><a href="venues.html">Venues</a></li>
-                    <li><a href="tickets.html" class="active">Tickets</a></li>
-                </ul>
-            </nav>
+<body class="bg-gray-950 text-white font-sans antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-emerald-500 text-black text-xs font-bold py-2 px-4 text-center tracking-wide uppercase">
+        🎟️ Rasmiy chiptalar sotuvi davom etmoqda! Firibgarlardan ogoh bo'ling.
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center font-black text-black text-xl group-hover:rotate-12 transition transform">
+                        26
+                    </div>
+                    <span class="text-2xl font-black tracking-widest text-white group-hover:text-emerald-400 transition">FIFA</span>
+                </a>
+
+                <!-- Nav Menu -->
+                <nav class="hidden lg:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                    <a href="index.html" class="text-gray-300 hover:text-emerald-400 transition">Bosh sahifa</a>
+                    <a href="matches.html" class="text-gray-300 hover:text-emerald-400 transition">O'yinlar</a>
+                    <a href="teams.html" class="text-gray-300 hover:text-emerald-400 transition">Jamoalar</a>
+                    <a href="venues.html" class="text-gray-300 hover:text-emerald-400 transition">Stadionlar</a>
+                    <a href="tickets.html" class="text-emerald-400 border-b-2 border-emerald-400 pb-1">Chiptalar</a>
+                    <a href="news.html" class="text-gray-300 hover:text-emerald-400 transition">Yangiliklar</a>
+                </nav>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-solid me-2 fa-globe"></i>UZB</a>
+                <a href="tickets.html" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 py-2.5 rounded-full transition transform hover:scale-105 shadow-lg shadow-emerald-500/20">
+                    Chipta Olish
+                </a>
+            </div>
+
         </div>
     </header>
 
-    <div class="container">
-        <h1 style="font-size: 36px; text-align: center; margin-bottom: 10px;">TICKET REGISTRATION</h1>
-        <p style="color: #94a3b8; text-align: center; margin-bottom: 30px;">Sign up for official ticketing updates and sales alerts.</p>
+    <!-- Page Title & Header Banner -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-950 py-16 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-2 inline-block">Rasmiy Chipta Portali</span>
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">O'yin Chiptalari va VIP Paketlar</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+                O'zingizga ma'qul toifadagi chiptani tanlang va dunyoning eng yirik futbol bayramida bevosita ishtirok eting.
+            </p>
+        </div>
+    </section>
 
-        <form class="ticket-form" onsubmit="event.preventDefault(); alert('Registration successful!');">
-            <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="John Doe" required>
-            </div>
-            <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="john@example.com" required>
-            </div>
-            <button type="submit" class="btn-submit">Register Interest</button>
-        </form>
-    </div>
+    <!-- Pricing / Ticket Categories -->
+    <main class="max-w-7xl mx-auto px-4 py-16">
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-    <footer><p>&copy; 2026 FIFA World Cup 26™ Clone</p></footer>
+            <!-- Category 3: Standard -->
+            <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col justify-between">
+                <div>
+                    <div class="text-emerald-400 font-bold text-xs uppercase tracking-widest mb-2">3-Toifa / Standard</div>
+                    <h3 class="text-2xl font-black mb-4">Guruh Bosqichi</h3>
+                    <p class="text-gray-400 text-xs mb-6">Stadionning yuqori qismidagi o'rinlar. Hamyonbop va unutilmas atmosfera.</p>
+                    
+                    <div class="text-4xl font-black mb-6">$120 <span class="text-xs text-gray-500 font-normal">/ bir o'yin uchun</span></div>
+
+                    <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Yuqori sektor o'rinlari</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Raqamli chipta (E-Ticket)</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Fan-zonaga kirish huquqi</li>
+                    </ul>
+                </div>
+
+                <button class="w-full bg-gray-800 hover:bg-emerald-500 hover:text-black font-bold py-3 rounded-xl transition text-sm">
+                    Sotib Olish
+                </button>
+            </div>
+
+            <!-- Category 1: Premium (Featured) -->
+            <div class="bg-gradient-to-b from-emerald-950/40 to-gray-900 rounded-3xl p-8 border-2 border-emerald-500 relative flex flex-col justify-between shadow-2xl shadow-emerald-500/10">
+                <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-emerald-500 text-black font-extrabold text-[10px] px-4 py-1 rounded-full uppercase tracking-wider">Eng Ommabop</span>
+                
+                <div>
+                    <div class="text-emerald-400 font-bold text-xs uppercase tracking-widest mb-2">1-Toifa / Category 1</div>
+                    <h3 class="text-2xl font-black mb-4">Markaziy Sektor</h3>
+                    <p class="text-gray-400 text-xs mb-6">Maydonga eng yaqin va eng yaxshi ko'rinishga ega markaziy o'rinlar.</p>
+                    
+                    <div class="text-4xl font-black mb-6">$380 <span class="text-xs text-gray-500 font-normal">/ bir o'yin uchun</span></div>
+
+                    <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Markaziy va pastki sektorlar</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Tezkor kirish yo'lagi</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Bepul esdalik sovg'alar toplami</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-400"></i> Stadion ichida ovqat va ichimliklar</li>
+                    </ul>
+                </div>
+
+                <button class="w-full bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold py-3.5 rounded-xl transition text-sm shadow-lg shadow-emerald-500/20">
+                    Chiptani Band Qilish
+                </button>
+            </div>
+
+            <!-- Category VIP: Hospitality -->
+            <div class="bg-gray-900 rounded-3xl p-8 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col justify-between">
+                <div>
+                    <div class="text-amber-400 font-bold text-xs uppercase tracking-widest mb-2">VIP Hospitality</div>
+                    <h3 class="text-2xl font-black mb-4">VIP Loja / Suite</h3>
+                    <p class="text-gray-400 text-xs mb-6">Oliy darajadagi qulaylik, maxsus restorn xizmati va premium o'rinlar.</p>
+                    
+                    <div class="text-4xl font-black mb-6">$1,250 <span class="text-xs text-gray-500 font-normal">/ bir o'yin uchun</span></div>
+
+                    <ul class="space-y-3 text-xs text-gray-300 mb-8">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Shaxsiy VIP Loja</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Restoran va premium menyu</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Maxsus avtoturargoh yeri</li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-400"></i> Afsonaviy futbolchilar bilan uchrashuv</li>
+                    </ul>
+                </div>
+
+                <button class="w-full bg-gray-800 hover:bg-amber-400 hover:text-black font-bold py-3 rounded-xl transition text-sm">
+                    VIP Murojaat Qoldirish
+                </button>
+            </div>
+
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-20 max-w-4xl mx-auto">
+            <h2 class="text-2xl font-black text-center uppercase tracking-tight mb-8">Chiptalar Bo'yicha Ko'p Beriladigan Savollar</h2>
+            
+            <div class="space-y-4">
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                    <h4 class="font-bold text-sm mb-2 text-emerald-400">Chiptalarni qanday qabul qilib olaman?</h4>
+                    <p class="text-xs text-gray-400">Barcha chiptalar raqamli ko'rinishda bo'lib, xarid amalga oshirilgach rasmiy FIFA ilovasi orqali profilingizga yuboriladi.</p>
+                </div>
+                <div class="bg-gray-900 p-6 rounded-2xl border border-gray-800">
+                    <h4 class="font-bold text-sm mb-2 text-emerald-400">Bir kishi nechta chipta sotib olishi mumkin?</h4>
+                    <p class="text-xs text-gray-400">Adolatli taqsimotni ta'minlash maqsadida bir shaxs bitta o'yin uchun ko'pi bilan 4 ta chipta xarid qilishi mumkin.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-black text-gray-500 text-sm border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigatsiya</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition">Bosh sahifa</a></li>
+                    <li><a href="matches.html" class="hover:text-white transition">O'yinlar</a></li>
+                    <li><a href="teams.html" class="hover:text-white transition">Jamoalar</a></li>
+                    <li><a href="venues.html" class="hover:text-white transition">Stadionlar</a></li>
+                    <li><a href="tickets.html" class="hover:text-white transition">Chiptalar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Tashkilot</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">FIFA Haqida</a></li>
+                    <li><a href="#" class="hover:text-white transition">Mezbon Shaharlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Ko'ngillilar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Hujjatlar</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Maxfiylik Siyosati</a></li>
+                    <li><a href="#" class="hover:text-white transition">Foydalanish Shartlari</a></li>
+                    <li><a href="#" class="hover:text-white transition">Media Markaz</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Bizni Kuzating</h4>
+                <div class="flex space-x-4 text-lg text-gray-400">
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-gray-900 text-center text-xs">
+            <p>© 2026 FIFA. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

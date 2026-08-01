@@ -1,54 +1,394 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Teams | FIFA World Cup 26™</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        body { background-color: #0b0e14; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
-        header { background-color: #000; border-bottom: 2px solid #3262ec; padding: 0 40px; }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff; }
-        .logo-badge { background: linear-gradient(135deg, #3262ec, #00d2ff); padding: 8px 14px; border-radius: 6px; font-weight: 900; }
-        nav ul { display: flex; list-style: none; gap: 28px; }
-        nav a { text-decoration: none; color: #e1e1e1; font-weight: 600; font-size: 14px; text-transform: uppercase; }
-        nav a.active { color: #00d2ff; }
-
-        .container { max-width: 1200px; margin: 50px auto; padding: 0 20px; flex: 1; }
-        .teams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; }
-        .team-card { background: #161c28; border: 1px solid #222c3d; border-radius: 12px; padding: 25px; text-align: center; }
-        footer { background: #000; border-top: 1px solid #222c3d; padding: 30px 0; text-align: center; color: #64748b; font-size: 13px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ishtirokchi Jamoalar | FIFA World Cup 2026™</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fifaGold: '#D4AF37',
+                        fifaBlue: '#021B38',
+                        fifaGreen: '#00E676',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="brand"><span class="logo-badge">FWC 26</span><strong>FIFA World Cup 26™</strong></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="matches.html">Matches</a></li>
-                    <li><a href="teams.html" class="active">Teams</a></li>
-                    <li><a href="venues.html">Venues</a></li>
-                    <li><a href="tickets.html">Tickets</a></li>
-                </ul>
-            </nav>
+<body class="bg-gray-950 text-white font-sans antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-emerald-500 text-black text-xs font-bold py-2 px-4 text-center tracking-wide uppercase">
+        🏆 Jahon Chempionati 2026: 48 ta jamoa, 12 ta guruh! <a href="tickets.html" class="underline hover:text-white transition">Chiptalar sotuvi ketmoqda →</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center font-black text-black text-xl group-hover:rotate-12 transition transform">
+                        26
+                    </div>
+                    <span class="text-2xl font-black tracking-widest text-white group-hover:text-emerald-400 transition">FIFA</span>
+                </a>
+
+                <!-- Nav Menu -->
+                <nav class="hidden lg:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                    <a href="index.html" class="text-gray-300 hover:text-emerald-400 transition">Bosh sahifa</a>
+                    <a href="matches.html" class="text-gray-300 hover:text-emerald-400 transition">O'yinlar & Natijalar</a>
+                    <a href="teams.html" class="text-emerald-400 border-b-2 border-emerald-400 pb-1">Jamoalar</a>
+                    <a href="tickets.html" class="text-gray-300 hover:text-emerald-400 transition">Chiptalar</a>
+                    <a href="news.html" class="text-gray-300 hover:text-emerald-400 transition">Yangiliklar</a>
+                </nav>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-solid me-2 fa-globe"></i>UZB</a>
+                <a href="tickets.html" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 py-2.5 rounded-full transition transform hover:scale-105 shadow-lg shadow-emerald-500/20">
+                    Chipta Olish
+                </a>
+            </div>
+
         </div>
     </header>
 
-    <div class="container">
-        <h1 style="font-size: 36px; margin-bottom: 10px;">QUALIFIED TEAMS</h1>
-        <p style="color: #94a3b8; margin-bottom: 30px;">48 nations competing for football's ultimate prize.</p>
-
-        <div class="teams-grid">
-            <div class="team-card"><div style="font-size:40px;">🇨🇦</div><h3>Canada</h3><p style="color:#00d2ff; font-size:12px;">Host • CONCACAF</p></div>
-            <div class="team-card"><div style="font-size:40px;">🇲🇽</div><h3>Mexico</h3><p style="color:#00d2ff; font-size:12px;">Host • CONCACAF</p></div>
-            <div class="team-card"><div style="font-size:40px;">🇺🇸</div><h3>USA</h3><p style="color:#00d2ff; font-size:12px;">Host • CONCACAF</p></div>
-            <div class="team-card"><div style="font-size:40px;">🇦🇷</div><h3>Argentina</h3><p style="color:#00d2ff; font-size:12px;">CONMEBOL</p></div>
-            <div class="team-card"><div style="font-size:40px;">🇫🇷</div><h3>France</h3><p style="color:#00d2ff; font-size:12px;">UEFA</p></div>
+    <!-- Page Title & Header Banner -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-950 py-16 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-2 inline-block">FIFA World Cup 2026™</span>
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">Ishtirokchi Jamoalar va Guruhlar</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+                Musobaqada ishtirok etayotgan 48 terma jamoaning guruhlar bo'yicha taqsimoti va ularning tarkibi bilan tanishing.
+            </p>
         </div>
-    </div>
+    </section>
 
-    <footer><p>&copy; 2026 FIFA World Cup 26™ Clone</p></footer>
+    <!-- Filters Bar -->
+    <section class="py-6 bg-gray-900 border-b border-gray-800 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Confederation Filters -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <button class="bg-emerald-500 text-black font-bold px-4 py-2 rounded-full text-xs uppercase transition">Barcha Guruhlar</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">UEFA (Yevropa)</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">CONMEBOL (Janubiy Amerika)</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">CONCACAF (Shimoliy Amerika)</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">AFC (Osiyo)</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">CAF (Afrika)</button>
+            </div>
+
+            <!-- Search Field -->
+            <div class="relative w-full md:w-64">
+                <input type="text" placeholder="Jamoa nomini kiriting..." class="w-full bg-gray-950 border border-gray-800 rounded-full pl-10 pr-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-gray-500 text-xs"></i>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Main Groups Grid -->
+    <main class="max-w-7xl mx-auto px-4 py-12">
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Group A -->
+            <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-emerald-500/40 transition">
+                <div class="bg-gray-800/80 px-6 py-4 border-b border-gray-700/50 flex justify-between items-center">
+                    <h3 class="font-black text-lg text-emerald-400">A GURUHI</h3>
+                    <span class="text-xs bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20 font-bold">Mezbon</span>
+                </div>
+                <ul class="divide-y divide-gray-800/60 p-2">
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇲🇽</span>
+                            <span class="font-bold">Meksika</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #15</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇮🇹</span>
+                            <span class="font-bold">Italiya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #9</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇿🇦</span>
+                            <span class="font-bold">Janubiy Afrika</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #59</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇯🇵</span>
+                            <span class="font-bold">Yaponiya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #18</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Group B -->
+            <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-emerald-500/40 transition">
+                <div class="bg-gray-800/80 px-6 py-4 border-b border-gray-700/50 flex justify-between items-center">
+                    <h3 class="font-black text-lg text-emerald-400">B GURUHI</h3>
+                    <span class="text-xs bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20 font-bold">Mezbon</span>
+                </div>
+                <ul class="divide-y divide-gray-800/60 p-2">
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇺🇸</span>
+                            <span class="font-bold">AQSH</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #11</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇪🇸</span>
+                            <span class="font-bold">Ispaniya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #3</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇲🇦</span>
+                            <span class="font-bold">Marokash</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #12</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇦🇺</span>
+                            <span class="font-bold">Avstraliya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #23</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Group C -->
+            <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-emerald-500/40 transition">
+                <div class="bg-gray-800/80 px-6 py-4 border-b border-gray-700/50 flex justify-between items-center">
+                    <h3 class="font-black text-lg text-emerald-400">C GURUHI</h3>
+                    <span class="text-xs bg-emerald-500/10 text-emerald-400 px-3 py-1 rounded-full border border-emerald-500/20 font-bold">Mezbon</span>
+                </div>
+                <ul class="divide-y divide-gray-800/60 p-2">
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇨🇦</span>
+                            <span class="font-bold">Kanada</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #48</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇳🇬</span>
+                            <span class="font-bold">Nigeriya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #30</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇨🇭</span>
+                            <span class="font-bold">Shveysariya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #19</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇶🇦</span>
+                            <span class="font-bold">Qatar</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #34</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Group D -->
+            <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-emerald-500/40 transition">
+                <div class="bg-gray-800/80 px-6 py-4 border-b border-gray-700/50 flex justify-between items-center">
+                    <h3 class="font-black text-lg text-emerald-400">D GURUHI</h3>
+                </div>
+                <ul class="divide-y divide-gray-800/60 p-2">
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇧🇷</span>
+                            <span class="font-bold">Braziliya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #5</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇩🇪</span>
+                            <span class="font-bold">Germaniya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #16</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇰🇷</span>
+                            <span class="font-bold">Janubiy Koreya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #22</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇪🇨</span>
+                            <span class="font-bold">Ekvador</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #31</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Group E -->
+            <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-emerald-500/40 transition">
+                <div class="bg-gray-800/80 px-6 py-4 border-b border-gray-700/50 flex justify-between items-center">
+                    <h3 class="font-black text-lg text-emerald-400">E GURUHI</h3>
+                </div>
+                <ul class="divide-y divide-gray-800/60 p-2">
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇦🇷</span>
+                            <span class="font-bold">Argentina</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #1</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇦🇱</span>
+                            <span class="font-bold">Albaniya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #66</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇺🇿</span>
+                            <span class="font-bold text-emerald-400">O'zbekiston</span>
+                        </div>
+                        <span class="text-xs text-emerald-400 font-mono font-bold">FIFA #60</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇨🇱</span>
+                            <span class="font-bold">Chili</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #42</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Group F -->
+            <div class="bg-gray-900 rounded-2xl border border-gray-800 overflow-hidden hover:border-emerald-500/40 transition">
+                <div class="bg-gray-800/80 px-6 py-4 border-b border-gray-700/50 flex justify-between items-center">
+                    <h3 class="font-black text-lg text-emerald-400">F GURUHI</h3>
+                </div>
+                <ul class="divide-y divide-gray-800/60 p-2">
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇫🇷</span>
+                            <span class="font-bold">Fransiya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #2</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+                            <span class="font-bold">Angliya</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #4</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇪🇬</span>
+                            <span class="font-bold">Misr</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #36</span>
+                    </li>
+                    <li class="p-4 flex items-center justify-between hover:bg-gray-800/40 rounded-xl transition">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🇮🇷</span>
+                            <span class="font-bold">Eron</span>
+                        </div>
+                        <span class="text-xs text-gray-500 font-mono">FIFA #20</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Format Explanation Banner -->
+        <div class="mt-16 bg-gradient-to-r from-gray-900 via-emerald-950/40 to-gray-900 p-8 rounded-3xl border border-emerald-500/20 flex flex-col lg:flex-row items-center justify-between gap-8">
+            <div class="space-y-2 text-center lg:text-left">
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-400">Musobaqa Formati</span>
+                <h3 class="text-2xl md:text-3xl font-black">48 Ta Jamoa Qanday Saralanadi?</h3>
+                <p class="text-gray-400 text-sm max-w-2xl">
+                    12 ta guruhdagi har bir guruhdan 1 va 2-o'rin egalari hamda eng yaxshi ko'rsatkichga ega 8 ta 3-o'rin sohibi 1/32 pley-off bosqichiga yo'l oladi.
+                </p>
+            </div>
+            <a href="matches.html" class="bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold px-8 py-4 rounded-full text-sm transition whitespace-nowrap shadow-lg shadow-emerald-500/20">
+                Pley-Off Jadvalini Ko'rish
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-black text-gray-500 text-sm border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigatsiya</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition">Bosh sahifa</a></li>
+                    <li><a href="matches.html" class="hover:text-white transition">O'yinlar</a></li>
+                    <li><a href="teams.html" class="hover:text-white transition">Jamoalar</a></li>
+                    <li><a href="tickets.html" class="hover:text-white transition">Chiptalar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Tashkilot</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">FIFA Haqida</a></li>
+                    <li><a href="#" class="hover:text-white transition">Mezbon Shaharlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Ko'ngillilar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Hujjatlar</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Maxfiylik Siyosati</a></li>
+                    <li><a href="#" class="hover:text-white transition">Foydalanish Shartlari</a></li>
+                    <li><a href="#" class="hover:text-white transition">Media Markaz</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Bizni Kuzating</h4>
+                <div class="flex space-x-4 text-lg text-gray-400">
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-gray-900 text-center text-xs">
+            <p>© 2026 FIFA. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

@@ -1,71 +1,333 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uz" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <title>Matches & Schedule | FIFA World Cup 26™</title>
-    <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
-        body { background-color: #0b0e14; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
-        header { background-color: #000; border-bottom: 2px solid #3262ec; padding: 0 40px; }
-        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
-        .brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff; }
-        .logo-badge { background: linear-gradient(135deg, #3262ec, #00d2ff); padding: 8px 14px; border-radius: 6px; font-weight: 900; }
-        nav ul { display: flex; list-style: none; gap: 28px; }
-        nav a { text-decoration: none; color: #e1e1e1; font-weight: 600; font-size: 14px; text-transform: uppercase; }
-        nav a.active { color: #00d2ff; }
-
-        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; flex: 1; }
-        .match-card { background: #161c28; border: 1px solid #222c3d; border-radius: 12px; padding: 20px 30px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
-        .match-teams { display: flex; align-items: center; gap: 40px; font-size: 18px; font-weight: 800; }
-        .match-vs { font-size: 12px; color: #64748b; background: #0b0e14; padding: 6px 12px; border-radius: 20px; }
-        footer { background: #000; border-top: 1px solid #222c3d; padding: 30px 0; text-align: center; color: #64748b; font-size: 13px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O'yinlar Jadvali | FIFA World Cup 2026™</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Font Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom Config for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fifaGold: '#D4AF37',
+                        fifaBlue: '#021B38',
+                        fifaGreen: '#00E676',
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-    <header>
-        <div class="nav-container">
-            <a href="index.html" class="brand"><span class="logo-badge">FWC 26</span><strong>FIFA World Cup 26™</strong></a>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="matches.html" class="active">Matches</a></li>
-                    <li><a href="teams.html">Teams</a></li>
-                    <li><a href="venues.html">Venues</a></li>
-                    <li><a href="tickets.html">Tickets</a></li>
-                </ul>
-            </nav>
+<body class="bg-gray-950 text-white font-sans antialiased selection:bg-emerald-500 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-emerald-500 text-black text-xs font-bold py-2 px-4 text-center tracking-wide uppercase">
+        🎟️ O'yinlar uchun chiptalarni sotib olishga ulgurib qoling! <a href="tickets.html" class="underline hover:text-white transition">Chiptalarni ko'rish →</a>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 bg-gray-900/90 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <div class="flex items-center space-x-8">
+                <a href="index.html" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 bg-emerald-500 rounded-lg flex items-center justify-center font-black text-black text-xl group-hover:rotate-12 transition transform">
+                        26
+                    </div>
+                    <span class="text-2xl font-black tracking-widest text-white group-hover:text-emerald-400 transition">FIFA</span>
+                </a>
+
+                <!-- Nav Menu -->
+                <nav class="hidden lg:flex space-x-8 text-sm font-semibold uppercase tracking-wider">
+                    <a href="index.html" class="text-gray-300 hover:text-emerald-400 transition">Bosh sahifa</a>
+                    <a href="matches.html" class="text-emerald-400 border-b-2 border-emerald-400 pb-1">O'yinlar & Natijalar</a>
+                    <a href="teams.html" class="text-gray-300 hover:text-emerald-400 transition">Jamoalar</a>
+                    <a href="tickets.html" class="text-gray-300 hover:text-emerald-400 transition">Chiptalar</a>
+                    <a href="news.html" class="text-gray-300 hover:text-emerald-400 transition">Yangiliklar</a>
+                </nav>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fa-solid me-2 fa-globe"></i>UZB</a>
+                <a href="tickets.html" class="bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 py-2.5 rounded-full transition transform hover:scale-105 shadow-lg shadow-emerald-500/20">
+                    Chipta Olish
+                </a>
+            </div>
+
         </div>
     </header>
 
-    <div class="container">
-        <h1 style="font-size: 36px; margin-bottom: 10px;">MATCH SCHEDULE</h1>
-        <p style="color: #94a3b8; margin-bottom: 30px;">104 matches across 16 host venues starting June 11, 2026.</p>
+    <!-- Page Title & Header Banner -->
+    <section class="bg-gradient-to-b from-gray-900 to-gray-950 py-16 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-emerald-400 text-sm font-bold uppercase tracking-widest mb-2 inline-block">FIFA World Cup 2026™</span>
+            <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tight mb-4">O'yinlar Jadvali va Taqvim</h1>
+            <p class="text-gray-400 max-w-2xl mx-auto text-sm md:text-base">
+                104 ta uchrashuvning to'liq jadvali, o'yin vaqtlari va stadionlar ma'lumoti bilan tanishing.
+            </p>
+        </div>
+    </section>
 
-        <div class="match-card">
-            <div>
-                <div style="font-size: 12px; color: #00d2ff; font-weight: 700;">Match 1 • Group A • June 11, 2026</div>
-                <div class="match-teams" style="margin-top: 10px;">
-                    <span>🇲🇽 Mexico</span>
-                    <span class="match-vs">VS</span>
-                    <span>TBD</span>
+    <!-- Filters and Search Bar -->
+    <section class="py-6 bg-gray-900 border-b border-gray-800 sticky top-20 z-40">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+            
+            <!-- Stage Filters -->
+            <div class="flex flex-wrap gap-2 justify-center">
+                <button class="bg-emerald-500 text-black font-bold px-4 py-2 rounded-full text-xs uppercase transition">Barchasi</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">Guruh Bosqichi</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">1/32 Final</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">1/16 Final</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">Chorak Final</button>
+                <button class="bg-gray-800 hover:bg-gray-700 text-gray-300 font-bold px-4 py-2 rounded-full text-xs uppercase transition">Final</button>
+            </div>
+
+            <!-- Search Field -->
+            <div class="relative w-full md:w-64">
+                <input type="text" placeholder="Jamoa yoki shahar..." class="w-full bg-gray-950 border border-gray-800 rounded-full pl-10 pr-4 py-2 text-xs text-white focus:outline-none focus:border-emerald-400">
+                <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-gray-500 text-xs"></i>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Main Schedule Section -->
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-12">
+
+        <!-- Day 1 Block -->
+        <div>
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-2xl font-black uppercase text-emerald-400">11-Iyun, Payshanba</h2>
+                <div class="h-px bg-gray-800 flex-1"></div>
+            </div>
+
+            <div class="grid grid-cols-1 gap-4">
+                <!-- Match Card 1 -->
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left min-w-[140px]">
+                        <span class="text-xs font-bold text-emerald-400 block">Ochilish O'yini</span>
+                        <span class="text-xs text-gray-500">O'yin #1 • A Guruhi</span>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-6 md:gap-12 w-full max-w-xl">
+                        <div class="flex items-center gap-3 w-1/2 justify-end">
+                            <span class="font-bold text-lg md:text-xl">Meksika</span>
+                            <span class="text-2xl">🇲🇽</span>
+                        </div>
+                        <div class="bg-gray-950 px-4 py-2 rounded-xl text-center border border-gray-800 min-w-[90px]">
+                            <span class="text-sm font-bold block text-white">20:00</span>
+                            <span class="text-[10px] text-gray-500 uppercase">Bo'lib o'tmagan</span>
+                        </div>
+                        <div class="flex items-center gap-3 w-1/2 justify-start">
+                            <span class="text-2xl">🇿🇦</span>
+                            <span class="font-bold text-lg md:text-xl">Janubiy Afrika</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-right min-w-[180px] text-xs text-gray-400">
+                        <p class="font-bold text-white"><i class="fa-solid fa-location-dot me-1 text-emerald-400"></i> Estadio Azteca</p>
+                        <p>Mexico City, Meksika</p>
+                    </div>
                 </div>
             </div>
-            <div style="text-align: right; color: #94a3b8; font-size: 13px;">Estadio Azteca<br>Mexico City</div>
         </div>
 
-        <div class="match-card">
-            <div>
-                <div style="font-size: 12px; color: #00d2ff; font-weight: 700;">Match 104 • Final • July 19, 2026</div>
-                <div class="match-teams" style="margin-top: 10px;">
-                    <span>Winner SF1</span>
-                    <span class="match-vs">VS</span>
-                    <span>Winner SF2</span>
+        <!-- Day 2 Block -->
+        <div>
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-2xl font-black uppercase text-emerald-400">12-Iyun, Juma</h2>
+                <div class="h-px bg-gray-800 flex-1"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Match Card 2 -->
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left min-w-[140px]">
+                        <span class="text-xs font-bold text-emerald-400 block">1-Tur</span>
+                        <span class="text-xs text-gray-500">O'yin #2 • B Guruhi</span>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-6 md:gap-12 w-full max-w-xl">
+                        <div class="flex items-center gap-3 w-1/2 justify-end">
+                            <span class="font-bold text-lg md:text-xl">AQSH</span>
+                            <span class="text-2xl">🇺🇸</span>
+                        </div>
+                        <div class="bg-gray-950 px-4 py-2 rounded-xl text-center border border-gray-800 min-w-[90px]">
+                            <span class="text-sm font-bold block text-white">18:00</span>
+                            <span class="text-[10px] text-gray-500 uppercase">Bo'lib o'tmagan</span>
+                        </div>
+                        <div class="flex items-center gap-3 w-1/2 justify-start">
+                            <span class="text-2xl">🇦🇺</span>
+                            <span class="font-bold text-lg md:text-xl">Avstraliya</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-right min-w-[180px] text-xs text-gray-400">
+                        <p class="font-bold text-white"><i class="fa-solid fa-location-dot me-1 text-emerald-400"></i> SoFi Stadium</p>
+                        <p>Los Angeles, AQSH</p>
+                    </div>
+                </div>
+
+                <!-- Match Card 3 -->
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left min-w-[140px]">
+                        <span class="text-xs font-bold text-emerald-400 block">1-Tur</span>
+                        <span class="text-xs text-gray-500">O'yin #3 • C Guruhi</span>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-6 md:gap-12 w-full max-w-xl">
+                        <div class="flex items-center gap-3 w-1/2 justify-end">
+                            <span class="font-bold text-lg md:text-xl">Kanada</span>
+                            <span class="text-2xl">🇨🇦</span>
+                        </div>
+                        <div class="bg-gray-950 px-4 py-2 rounded-xl text-center border border-gray-800 min-w-[90px]">
+                            <span class="text-sm font-bold block text-white">21:00</span>
+                            <span class="text-[10px] text-gray-500 uppercase">Bo'lib o'tmagan</span>
+                        </div>
+                        <div class="flex items-center gap-3 w-1/2 justify-start">
+                            <span class="text-2xl">🇳🇬</span>
+                            <span class="font-bold text-lg md:text-xl">Nigeriya</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-right min-w-[180px] text-xs text-gray-400">
+                        <p class="font-bold text-white"><i class="fa-solid fa-location-dot me-1 text-emerald-400"></i> BMO Field</p>
+                        <p>Toronto, Kanada</p>
+                    </div>
                 </div>
             </div>
-            <div style="text-align: right; color: #94a3b8; font-size: 13px;">MetLife Stadium<br>New York New Jersey</div>
         </div>
-    </div>
 
-    <footer><p>&copy; 2026 FIFA World Cup 26™ Clone</p></footer>
+        <!-- Day 3 Block -->
+        <div>
+            <div class="flex items-center gap-4 mb-6">
+                <h2 class="text-2xl font-black uppercase text-emerald-400">13-Iyun, Shanba</h2>
+                <div class="h-px bg-gray-800 flex-1"></div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Match Card 4 -->
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left min-w-[140px]">
+                        <span class="text-xs font-bold text-emerald-400 block">1-Tur</span>
+                        <span class="text-xs text-gray-500">O'yin #4 • D Guruhi</span>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-6 md:gap-12 w-full max-w-xl">
+                        <div class="flex items-center gap-3 w-1/2 justify-end">
+                            <span class="font-bold text-lg md:text-xl">Braziliya</span>
+                            <span class="text-2xl">🇧🇷</span>
+                        </div>
+                        <div class="bg-gray-950 px-4 py-2 rounded-xl text-center border border-gray-800 min-w-[90px]">
+                            <span class="text-sm font-bold block text-white">15:00</span>
+                            <span class="text-[10px] text-gray-500 uppercase">Bo'lib o'tmagan</span>
+                        </div>
+                        <div class="flex items-center gap-3 w-1/2 justify-start">
+                            <span class="text-2xl">🇯🇵</span>
+                            <span class="font-bold text-lg md:text-xl">Yaponiya</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-right min-w-[180px] text-xs text-gray-400">
+                        <p class="font-bold text-white"><i class="fa-solid fa-location-dot me-1 text-emerald-400"></i> MetLife Stadium</p>
+                        <p>New York / New Jersey, AQSH</p>
+                    </div>
+                </div>
+
+                <!-- Match Card 5 -->
+                <div class="bg-gray-900 rounded-2xl p-6 border border-gray-800 hover:border-emerald-500/40 transition flex flex-col md:flex-row items-center justify-between gap-6">
+                    <div class="text-center md:text-left min-w-[140px]">
+                        <span class="text-xs font-bold text-emerald-400 block">1-Tur</span>
+                        <span class="text-xs text-gray-500">O'yin #5 • E Guruhi</span>
+                    </div>
+
+                    <div class="flex items-center justify-center gap-6 md:gap-12 w-full max-w-xl">
+                        <div class="flex items-center gap-3 w-1/2 justify-end">
+                            <span class="font-bold text-lg md:text-xl">Ispaniya</span>
+                            <span class="text-2xl">🇪🇸</span>
+                        </div>
+                        <div class="bg-gray-950 px-4 py-2 rounded-xl text-center border border-gray-800 min-w-[90px]">
+                            <span class="text-sm font-bold block text-white">19:00</span>
+                            <span class="text-[10px] text-gray-500 uppercase">Bo'lib o'tmagan</span>
+                        </div>
+                        <div class="flex items-center gap-3 w-1/2 justify-start">
+                            <span class="text-2xl">🇲🇦</span>
+                            <span class="font-bold text-lg md:text-xl">Marokash</span>
+                        </div>
+                    </div>
+
+                    <div class="text-center md:text-right min-w-[180px] text-xs text-gray-400">
+                        <p class="font-bold text-white"><i class="fa-solid fa-location-dot me-1 text-emerald-400"></i> Hard Rock Stadium</p>
+                        <p>Miami, AQSH</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Play-off Info Preview -->
+        <div class="bg-gradient-to-r from-emerald-900/30 via-gray-900 to-gray-900 p-8 rounded-3xl border border-emerald-500/20 text-center md:text-left flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <span class="text-emerald-400 font-bold text-xs uppercase tracking-wider">Pley-Off Bosqichi</span>
+                <h3 class="text-2xl font-black mt-1">19-Iyun - 19-Iyul Kunlari</h3>
+                <p class="text-gray-400 text-sm mt-1">1/32 finaldan boshlab har bir mag'lubiyat jamoaning musobaqa bilan xayrlashuvini anglatadi.</p>
+            </div>
+            <a href="tickets.html" class="bg-emerald-500 hover:bg-emerald-400 text-black font-extrabold px-6 py-3 rounded-full text-sm transition whitespace-nowrap">
+                Pley-Off Chiptalarini Ko'rish
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Main Footer -->
+    <footer class="bg-black text-gray-500 text-sm border-t border-gray-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Navigatsiya</h4>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-white transition">Bosh sahifa</a></li>
+                    <li><a href="matches.html" class="hover:text-white transition">O'yinlar</a></li>
+                    <li><a href="teams.html" class="hover:text-white transition">Jamoalar</a></li>
+                    <li><a href="tickets.html" class="hover:text-white transition">Chiptalar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Tashkilot</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">FIFA Haqida</a></li>
+                    <li><a href="#" class="hover:text-white transition">Mezbon Shaharlar</a></li>
+                    <li><a href="#" class="hover:text-white transition">Ko'ngillilar</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Hujjatlar</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:text-white transition">Maxfiylik Siyosati</a></li>
+                    <li><a href="#" class="hover:text-white transition">Foydalanish Shartlari</a></li>
+                    <li><a href="#" class="hover:text-white transition">Media Markaz</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-4 uppercase text-xs tracking-wider">Bizni Kuzating</h4>
+                <div class="flex space-x-4 text-lg text-gray-400">
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#" class="hover:text-emerald-400"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 pt-8 border-t border-gray-900 text-center text-xs">
+            <p>© 2026 FIFA. Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
