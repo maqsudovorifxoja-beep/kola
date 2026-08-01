@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matches & Schedule | FIFA World Cup 26™</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+        body { background-color: #0b0e14; color: #ffffff; min-height: 100vh; display: flex; flex-direction: column; }
+        header { background-color: #000; border-bottom: 2px solid #3262ec; padding: 0 40px; }
+        .nav-container { max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; height: 70px; }
+        .brand { display: flex; align-items: center; gap: 15px; text-decoration: none; color: #fff; }
+        .logo-badge { background: linear-gradient(135deg, #3262ec, #00d2ff); padding: 8px 14px; border-radius: 6px; font-weight: 900; }
+        nav ul { display: flex; list-style: none; gap: 28px; }
+        nav a { text-decoration: none; color: #e1e1e1; font-weight: 600; font-size: 14px; text-transform: uppercase; }
+        nav a.active { color: #00d2ff; }
+
+        .container { max-width: 1100px; margin: 50px auto; padding: 0 20px; flex: 1; }
+        .match-card { background: #161c28; border: 1px solid #222c3d; border-radius: 12px; padding: 20px 30px; margin-bottom: 15px; display: flex; align-items: center; justify-content: space-between; }
+        .match-teams { display: flex; align-items: center; gap: 40px; font-size: 18px; font-weight: 800; }
+        .match-vs { font-size: 12px; color: #64748b; background: #0b0e14; padding: 6px 12px; border-radius: 20px; }
+        footer { background: #000; border-top: 1px solid #222c3d; padding: 30px 0; text-align: center; color: #64748b; font-size: 13px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="nav-container">
+            <a href="index.html" class="brand"><span class="logo-badge">FWC 26</span><strong>FIFA World Cup 26™</strong></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="matches.html" class="active">Matches</a></li>
+                    <li><a href="teams.html">Teams</a></li>
+                    <li><a href="venues.html">Venues</a></li>
+                    <li><a href="tickets.html">Tickets</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 style="font-size: 36px; margin-bottom: 10px;">MATCH SCHEDULE</h1>
+        <p style="color: #94a3b8; margin-bottom: 30px;">104 matches across 16 host venues starting June 11, 2026.</p>
+
+        <div class="match-card">
+            <div>
+                <div style="font-size: 12px; color: #00d2ff; font-weight: 700;">Match 1 • Group A • June 11, 2026</div>
+                <div class="match-teams" style="margin-top: 10px;">
+                    <span>🇲🇽 Mexico</span>
+                    <span class="match-vs">VS</span>
+                    <span>TBD</span>
+                </div>
+            </div>
+            <div style="text-align: right; color: #94a3b8; font-size: 13px;">Estadio Azteca<br>Mexico City</div>
+        </div>
+
+        <div class="match-card">
+            <div>
+                <div style="font-size: 12px; color: #00d2ff; font-weight: 700;">Match 104 • Final • July 19, 2026</div>
+                <div class="match-teams" style="margin-top: 10px;">
+                    <span>Winner SF1</span>
+                    <span class="match-vs">VS</span>
+                    <span>Winner SF2</span>
+                </div>
+            </div>
+            <div style="text-align: right; color: #94a3b8; font-size: 13px;">MetLife Stadium<br>New York New Jersey</div>
+        </div>
+    </div>
+
+    <footer><p>&copy; 2026 FIFA World Cup 26™ Clone</p></footer>
+</body>
+</html>
